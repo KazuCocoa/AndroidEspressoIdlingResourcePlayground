@@ -17,7 +17,7 @@ public class ThirdActivityEspressoTest {
 
     @Test
     public void thirdActivityTest() throws InterruptedException {
-        GlobalApplication.ApplicationComponent component = Dagger_GlobalApplication_ApplicationComponent.builder()
+        GlobalApplication.ApplicationComponent component = DaggerGlobalApplication_ApplicationComponent.builder()
                                                                                                         .restServicesModule(new MockRestServiceModule())
                                                                                                         .build();
         ((GlobalApplication) InstrumentationRegistry.getInstrumentation().getTargetContext().getApplicationContext()).setApplicationComponent(

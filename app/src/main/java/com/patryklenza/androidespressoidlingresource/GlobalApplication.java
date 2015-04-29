@@ -27,7 +27,7 @@ public class GlobalApplication extends Application {
         _activityEventStream = Observable.create(activityEventProducer);
         registerActivityLifecycleCallbacks(activityEventProducer);
 
-        applicationComponent = Dagger_GlobalApplication_ApplicationComponent.builder()
+        applicationComponent = DaggerGlobalApplication_ApplicationComponent.builder()
                                                                             .restServicesModule(new RestServicesModule())
                                                                             .build();
         component().inject(this);

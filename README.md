@@ -416,7 +416,7 @@ and is configured and wired in Application class:
 public void onCreate() {
     super.onCreate();
 
-    applicationComponent = Dagger_GlobalApplication_ApplicationComponent.builder()
+    applicationComponent = DaggerGlobalApplication_ApplicationComponent.builder()
                                                                         .restServicesModule(new RestServicesModule())
                                                                         .build();
     component().inject(this);
@@ -448,7 +448,7 @@ Test method builds Dagger component but uses MockRestServiceModule instead of ou
 ```java
 @Test
 public void thirdActivityTest() throws InterruptedException {
-    GlobalApplication.ApplicationComponent component = Dagger_GlobalApplication_ApplicationComponent.builder()
+    GlobalApplication.ApplicationComponent component = DaggerGlobalApplication_ApplicationComponent.builder()
                                                                                                     .restServicesModule(new MockRestServiceModule())
                                                                                                     .build();
     ((GlobalApplication) InstrumentationRegistry.getInstrumentation().getTargetContext().getApplicationContext()).setApplicationComponent(
